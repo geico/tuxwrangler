@@ -1,0 +1,15 @@
+workspace = { members = [ "src/config"] }
+[package]
+name = "tuxwrangler"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+clap = {version = "4", features = ["derive", "env", "string"]}
+env_logger = "0.11"
+tw-config = {version="0.1", path = "./src/config"}
+log = "0.4"
+serde_json = "1"
+tokio = {version = "1", features = ["full"]}
