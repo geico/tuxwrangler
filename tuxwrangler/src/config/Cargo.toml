@@ -1,0 +1,26 @@
+[package]
+name = "tw-config"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+anyhow = "1"
+bollard = {version = "0.16", features = ["buildkit"]}
+docker_credential = "1"
+env_logger = "0.10"
+chrono = "0.4"
+flate2 = {version = "1"}
+futures = "0.3"
+handlebars = "5"
+itertools = "0.12"
+log = "0.4"
+octocrab = "0.38"
+regex = "1"
+serde = {version =  "1", features = ["derive"]}
+serde_json = "1"
+tar = "0.4"
+toml = "0.8"
+toml_edit = "0.22"
+tokio = {version = "1", features = ["macros"]}

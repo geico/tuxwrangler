@@ -1,0 +1,28 @@
+name: TuxWrangler CI check
+on:
+    push:
+        branches:
+            - main
+    pull_request:
+        branches:
+            - main
+jobs:
+  Build:
+    runs-on: ubuntu-latest
+    env:
+        RUSTFLAGS: -D warnings
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build CLI
+        run: |
+          cd tuxwrangler
+          cargo build --all-features --release 
+      - name: Check lint
+        run: |
+          cd tuxwrangler
+          cargo check 
+          cargo clippy
+      - name: Check formatting
+        run: |
+          cd tuxwrangler
+          cargo fmt --check
